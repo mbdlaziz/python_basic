@@ -166,16 +166,49 @@ print(employee.get_name())'''
 
 #error vid 12
 '''class Employee():
-    name = "Joko"
+    # name = "Joko"
 
-    def _init_(self, name, salary):
-        self.name = name
-        self.name = salary
+    def __init__(self, **kwargs):
+        k = kwargs
+        self.name = k['name']
+        self.salary = k['salary']
+        self.gender = k['gender']
+        self.age = k['age']
 
     def get_name(self):
         return self.name
 
 #instantiate class
-employee = Employee()
+employee = Employee(name="luna", salary=1000, gender="female", age="16")
 # employee.name = 'luna'
-print("%s " % employee.name)'''
+print(
+ "%s salary is: %s, gender is %s, and %s years old " %
+ (employee.name, employee.salary, employee.gender, employee.age)
+ )'''
+
+
+#parent class
+'''class Person:
+
+    name =  "Joko"
+
+    def walk(self):
+        return "walking"
+
+    def drink(self):
+        return "drinking"
+
+#child class
+class Employee(Person):
+
+    def get_name(self):
+        return self.name
+
+    def walk_and_drink (self):
+        drink = self.drink()
+        return "employee is walking and " + drink
+
+employee = Employee()
+employee.name = "joni"
+print(employee.get_name())
+print(employee.walk_and_drink())'''
